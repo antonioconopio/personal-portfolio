@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Montserrat, Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${inter.variable} ${roboto.variable} antialiased bg-neutral-950 `}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
