@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useId, useRef, useState } from "react";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 

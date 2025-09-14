@@ -10,16 +10,13 @@ import React, {
 } from "react";
 import {
   motion,
-  AnimatePresence,
-  Transition,
-  type VariantLabels,
-  type Target,
   useAnimationControls,
+  AnimatePresence,
+  type Transition,
+  type Target,
+  type VariantLabels,
   type TargetAndTransition,
 } from "framer-motion";
-
-type Controls = ReturnType<typeof useAnimationControls>;
-const controls: Controls = useAnimationControls();
 
 function cn(...classes: (string | undefined | null | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
@@ -40,7 +37,7 @@ export interface RotatingTextProps
   texts: string[];
   transition?: Transition;
   initial?: boolean | Target | VariantLabels;
-  animate?: boolean | VariantLabels | Controls | TargetAndTransition;
+  animate?: boolean | VariantLabels | TargetAndTransition;
   exit?: Target | VariantLabels;
   animatePresenceMode?: "sync" | "wait";
   animatePresenceInitial?: boolean;
@@ -81,6 +78,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     ref
   ) => {
     const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
+    const controls = useAnimationControls();
 
     const splitIntoCharacters = (text: string): string[] => {
       if (typeof Intl !== "undefined" && Intl.Segmenter) {
