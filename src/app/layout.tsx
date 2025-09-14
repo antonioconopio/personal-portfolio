@@ -3,16 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { Montserrat, Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -30,8 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${inter.variable} ${roboto.variable} antialiased bg-neutral-950 `}>
+      <body className={` ${inter.variable} antialiased bg-black`}>
         {children}
         <Analytics />
       </body>

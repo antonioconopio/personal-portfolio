@@ -31,19 +31,21 @@ export default function TechnologiesMarquee() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center bg-black">
       <div className="overflow-x-hidden w-[80%] py-8">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20" />
 
         <div
           ref={marqueeRef}
-          className="flex gap-12 md:gap-20 w-max animate-scroll hover:[animation-play-state:paused]">
+          className="flex gap-12 md:gap-20 w-max animate-scroll hover:[animation-play-state:paused]"
+        >
           {[...technologies, ...technologies, ...technologies].map(
             (tech, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 group transition-all duration-300">
+                className="flex items-center gap-2 group transition-all duration-300"
+              >
                 <img
                   src={`/svg/${tech}.svg`}
                   alt={tech}

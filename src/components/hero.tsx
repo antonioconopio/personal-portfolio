@@ -9,9 +9,9 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center text-white text-center">
-        <div className="bg-gradient-to-b from-black/60 via-black/80 to-black  flex flex-col p-4 justify-center items-center h-screen w-full z-1">
-          <h1 className="text-5xl font-extrabold text-white opacity-100 z-50 text-center">
-            Hey, I'm Antonio Conopio!
+        <div className="bg-gradient-to-b from-black/60 via-black/90 to-black  flex flex-col p-4 justify-center items-center h-screen w-full z-1">
+          <h1 className="text-5xl font-semibold text-white opacity-100 z-50 text-center mb-3">
+            hey! im antonio
           </h1>
           <RotatingText
             texts={[
@@ -51,7 +51,6 @@ const Hero = () => {
           yGap={36}
         />
       </div>
-      <div className="h-24 bg-neutral-950 bg-gradient-to-t from-neutral-950 to-black md:mb-0 mb-2"></div>
     </>
   );
 };
