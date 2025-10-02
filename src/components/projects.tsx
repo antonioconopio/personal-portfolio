@@ -31,17 +31,11 @@ const slideData = [
     buttonLink: ".",
     src: "/images/vcard.png",
   },
-  {
-    title: "stats can analyzer",
-    button: "Github",
-    buttonLink: "https://github.com/antonioconopio/Job-Stats-Analyzer",
-    src: "/images/statscan.png",
-  },
 ];
 
 const Projects = () => {
   return (
-    <div className="mt-0 md:mt-10 p-20 relative " id="about">
+    <div className="mt-0 md:mt-10 md:p-20 p-0 relative " id="about">
       <div className="bg-black relative min-h-[420px] flex md:flex-row md:justify-evenly overflow-hidden items-center h-1/2 text-white text-center p-4 flex-col md:gap-20  gap-30 mb-10 md:pt-20">
         <h1 className="text-5xl font-semibold text-white">who am I.</h1>
 
@@ -124,7 +118,7 @@ const Projects = () => {
         </div>
       </div>
       <GradientBreak />
-      <div className="p-20" id="projects">
+      <div className="md:p-20 p-0 pt-20" id="projects">
         <h1 className="text-5xl font-semibold text-white text-center">
           projects.
         </h1>

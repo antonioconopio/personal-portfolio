@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center text-white text-center">
-        <div className="bg-gradient-to-b from-black/60 via-black/90 to-black  flex flex-col p-4 justify-center items-center h-screen w-full z-1">
+        <div className="bg-gradient-to-b from-black/60 via-black/90 to-black  flex flex-col p-4 justify-center items-center h-screen w-full z-1 ">
           <h1 className="text-5xl font-semibold text-white opacity-100 z-50 text-center mb-3">
             hey! im antonio
           </h1>
@@ -30,7 +30,8 @@ const Hero = () => {
             transition={{ type: "spring", damping: 50, stiffness: 400 }}
             rotationInterval={5000}
           />
-          <p className="text-lg font-light mt-4">
+
+          <p className="text-lg font-light mt-4 md:p-0 p-10">
             I am a passionate full stack developer with a focus on building
             responsive and user-friendly web applications.
           </p>
