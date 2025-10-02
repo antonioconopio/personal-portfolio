@@ -32,8 +32,8 @@ const Hero = () => {
           />
 
           <p className="text-lg font-light mt-4 md:p-0 p-10">
-            I am a passionate full stack developer with a focus on building
-            responsive and user-friendly web applications.
+            I am a software engineer driven by solving complex challenges and
+            crafting elegant solutions that make an impact.
           </p>
         </div>
 
