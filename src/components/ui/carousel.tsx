@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useId, useRef, useState } from "react";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 
@@ -156,9 +158,7 @@ type CarouselProps = {
 };
 
 export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
-  const [current, setCurrent] = useState<number>(
-    Math.min(Math.floor(slides.length / 2) + 1, Math.max(slides.length - 1, 0))
-  );
+  const [current, setCurrent] = useState<number>(0);
 
   const handlePreviousClick = () => {
     const previous = current - 1;

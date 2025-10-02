@@ -32,7 +32,7 @@ export default function TechnologiesMarquee() {
 
   return (
     <div className="flex justify-center items-center bg-black">
-      <div className="overflow-x-hidden w-[80%] py-8">
+      <div className="overflow-x-hidden md:w-[80%] w-[100%]  py-8">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20" />
 
