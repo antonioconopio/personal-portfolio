@@ -165,11 +165,11 @@ const jobResponsibilities = [
   },
 ];
 
-function cx(...classes) {
+function cx(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-function ScrollSpyNav({ activeId, onJump }) {
+function ScrollSpyNav({ activeId, onJump }: { activeId: string; onJump: (id: string) => void }) {
   return (
     <div className="hidden lg:block">
       <Card className="sticky top-6">
@@ -204,7 +204,7 @@ function ScrollSpyNav({ activeId, onJump }) {
   );
 }
 
-function MetaChip({ label, value }) {
+function MetaChip({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center gap-2 rounded-2xl border bg-background px-3 py-2">
       <span className="text-xs text-muted-foreground">{label}</span>
@@ -216,13 +216,13 @@ function MetaChip({ label, value }) {
 export default function page() {
   const [activeId, setActiveId] = useState("intro");
 
-  const observers = useMemo(() => ({ current: null }), []);
+  const observers = useMemo(() => ({ current: null as IntersectionObserver | null }), []);
 
   React.useEffect(() => {
     const ids = sections.map((s) => s.id);
     const elements = ids
       .map((id) => document.getElementById(id))
-      .filter(Boolean);
+      .filter((el): el is HTMLElement => el !== null);
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -251,7 +251,7 @@ export default function page() {
     };
   }, [observers]);
 
-  const jumpTo = (id) => {
+  const jumpTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
