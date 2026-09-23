@@ -38,9 +38,9 @@ const Navbar = () => {
         <a
           href="#"
           onClick={scrollToTop}
-          className="font-mono text-sm tracking-[0.2em] text-white uppercase shrink-0"
+          className="font-mono font-thin  text-sm tracking-[0.2em] text-white uppercase shrink-0"
         >
-          A. Conopio
+          {"<ac>"}
         </a>
 
         <nav className="hidden md:flex items-center gap-1 bg-black/40 border border-white/15 px-2 py-1.5 rounded-full">

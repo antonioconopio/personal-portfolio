@@ -6,21 +6,17 @@ const Hero = () => {
     <div className="flex flex-col justify-center items-center text-white text-center">
       <div className="bg-gradient-to-b from-black/60 via-black/95 to-black flex flex-col p-4 justify-center items-center h-screen w-full z-1 relative">
         <span className="font-mono text-xs md:text-sm tracking-[0.35em] uppercase text-white/50 mb-6">
-          Software Engineer — Guelph, ON
+          Software Engineer — Toronto, ON
         </span>
 
-        <h1 className="font-bold tracking-tight text-[9vw] md:text-[4.2vw] leading-[1.05] text-white mb-4">
-          Antonio Conopio
+        <h1 className="font-sans font-medium tracking-tight text-[9vw] md:text-[4.2vw] leading-[1.05] text-white mb-4">
+          ANTONIO CONOPIO
         </h1>
 
         <div className="flex items-center gap-3 font-mono text-sm md:text-base text-white/70 uppercase tracking-[0.2em]">
           <span aria-hidden className="inline-block w-6 h-px bg-white/40" />
           <RotatingText
-            texts={[
-              "Software Engineer",
-              "SE Co-op Student",
-              "Web Developer",
-            ]}
+            texts={["Software Engineer", "SE Co-op Student", "Web Developer"]}
             mainClassName="text-white overflow-hidden justify-center"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
@@ -34,8 +30,8 @@ const Hero = () => {
         </div>
 
         <p className="max-w-md text-sm md:text-base font-mono text-white/40 mt-8 leading-relaxed px-6 md:px-0">
-          Driven by solving complex challenges and crafting elegant
-          solutions that make an impact.
+          Driven by solving complex challenges and crafting elegant solutions
+          that make an impact.
         </p>
 
         <div className="absolute bottom-10 flex flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">

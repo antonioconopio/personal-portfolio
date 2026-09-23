@@ -8,7 +8,7 @@ const Contact = () => {
           <span className="block font-mono text-xs tracking-[0.3em] text-white/40 mb-3">
             03 &mdash;
           </span>
-          <h1 className="font-bold tracking-tight text-5xl text-white">
+          <h1 className="font-sans font-medium  tracking-tight text-5xl text-white">
             contact.
           </h1>
         </div>

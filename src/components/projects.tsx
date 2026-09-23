@@ -1,6 +1,12 @@
 "use client";
 import { FaGithub, FaCog, FaUserGraduate } from "react-icons/fa";
-import { FiGitBranch, FiHome, FiTrendingUp, FiPlay, FiLock } from "react-icons/fi";
+import {
+  FiGitBranch,
+  FiHome,
+  FiTrendingUp,
+  FiPlay,
+  FiLock,
+} from "react-icons/fi";
 import CardSwap, { Card } from "./CardSwap";
 import { GlowingEffect } from "./ui/glowing-effect";
 import GradientBreak from "./gradientBreak";
@@ -42,7 +48,15 @@ const galleryProjects = [
     icon: FiTrendingUp,
     description:
       "A full-stack analytics platform visualizing 19th-century Old Bailey court records, letting users filter, compare, and forecast crime trends across 130k+ cases from 1834–1913. A scikit-learn model with polynomial features generates leverage-based confidence intervals.",
-    tech: ["React", "JavaScript", "Python", "FastAPI", "scikit-learn", "pandas", "Vite"],
+    tech: [
+      "React",
+      "JavaScript",
+      "Python",
+      "FastAPI",
+      "scikit-learn",
+      "pandas",
+      "Vite",
+    ],
     githubLink: null,
   },
 ];
@@ -55,7 +69,7 @@ const Projects = () => {
           <span className="block font-mono text-xs tracking-[0.3em] text-white/40 mb-3">
             01 &mdash;
           </span>
-          <h1 className="font-bold tracking-tight text-5xl text-white">
+          <h1 className="font-sans font-medium  tracking-tight text-5xl text-white">
             who am I.
           </h1>
         </div>
@@ -78,7 +92,9 @@ const Projects = () => {
               />
               <div className="flex flex-row p-1">
                 <FaUserGraduate className="m-1" />
-                <h3 className="mx-2 text-left font-mono text-sm uppercase tracking-widest">Student</h3>
+                <h3 className="mx-2 text-left font-mono text-sm uppercase tracking-widest">
+                  Student
+                </h3>
               </div>
 
               <hr className="border-white/15" />
@@ -102,7 +118,9 @@ const Projects = () => {
               />
               <div className="flex flex-row p-1">
                 <FaCog className="m-1" />
-                <h3 className="mx-2 text-left font-mono text-sm uppercase tracking-widest">Software Engineer</h3>
+                <h3 className="mx-2 text-left font-mono text-sm uppercase tracking-widest">
+                  Software Engineer
+                </h3>
               </div>
               <hr className="border-white/15" />
               <div className="p-20">
@@ -122,7 +140,7 @@ const Projects = () => {
         <span className="block font-mono text-xs tracking-[0.3em] text-white/40 mb-3 text-center">
           02 &mdash;
         </span>
-        <h1 className="font-bold tracking-tight text-5xl text-white text-center mb-16">
+        <h1 className="font-sans font-medium tracking-tight text-5xl text-white text-center mb-16">
           projects.
         </h1>
 
