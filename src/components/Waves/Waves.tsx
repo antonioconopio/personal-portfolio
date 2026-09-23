@@ -408,10 +408,28 @@ const Waves: React.FC<WavesProps> = ({
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("touchmove", onTouchMove, { passive: false });
 
+    // stop the per-frame redraw loop while the canvas is scrolled out of
+    // view so it doesn't keep burning CPU/GPU for the rest of the page
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (frameIdRef.current === null) {
+            frameIdRef.current = requestAnimationFrame(tick);
+          }
+        } else if (frameIdRef.current !== null) {
+          cancelAnimationFrame(frameIdRef.current);
+          frameIdRef.current = null;
+        }
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(container);
+
     return () => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("touchmove", onTouchMove);
+      visibilityObserver.disconnect();
       if (frameIdRef.current !== null) {
         cancelAnimationFrame(frameIdRef.current);
       }

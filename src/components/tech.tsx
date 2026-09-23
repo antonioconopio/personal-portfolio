@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { div } from "three/tsl";
 
 const technologies = [
   "python",
