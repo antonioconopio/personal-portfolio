@@ -72,7 +72,7 @@ export default function MyForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 max-w-3xl mx-auto py-10 text-white ">
+        className="space-y-8 max-w-3xl mx-auto py-10 text-white font-mono">
         <FormField
           control={form.control}
           name="name"
@@ -84,7 +84,7 @@ export default function MyForm() {
                   placeholder="Name"
                   type=""
                   {...field}
-                  className="bg-neutral-900"
+                  className="bg-transparent border-white/20 rounded-none border-x-0 border-t-0 px-0 focus-visible:ring-0 focus-visible:border-white placeholder:text-white/30"
                 />
               </FormControl>
 
@@ -104,7 +104,7 @@ export default function MyForm() {
                   placeholder="Email"
                   type=""
                   {...field}
-                  className="bg-neutral-900"
+                  className="bg-transparent border-white/20 rounded-none border-x-0 border-t-0 px-0 focus-visible:ring-0 focus-visible:border-white placeholder:text-white/30"
                 />
               </FormControl>
 
@@ -122,7 +122,7 @@ export default function MyForm() {
               <FormControl>
                 <Textarea
                   placeholder="Message"
-                  className="resize-none bg-neutral-900"
+                  className="resize-none bg-transparent border-white/20 rounded-none px-0 focus-visible:ring-0 focus-visible:border-white placeholder:text-white/30"
                   {...field}
                 />
               </FormControl>
@@ -131,7 +131,10 @@ export default function MyForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="cursor-pointer w-full">
+        <Button
+          type="submit"
+          className="cursor-pointer w-full bg-transparent border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 uppercase tracking-[0.15em] text-xs"
+        >
           Submit
         </Button>
       </form>

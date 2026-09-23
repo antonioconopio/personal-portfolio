@@ -2,13 +2,13 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center h-24 bg-black text-white text-center">
-      <div className="flex space-x-6 text-2xl">
+    <footer className="flex flex-col items-center justify-center gap-4 py-10 bg-black text-white text-center border-t border-white/10">
+      <div className="flex space-x-6 text-xl text-white/60">
         <a
           href="https://github.com/antonioconopio"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-400 transition"
+          className="hover:text-white transition-colors"
         >
           <FaGithub />
         </a>
@@ -16,13 +16,13 @@ const Footer = () => {
           href="https://linkedin.com/in/antonio-conopio-b03918226"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-400 transition"
+          className="hover:text-white transition-colors"
         >
           <FaLinkedin />
         </a>
       </div>
-      <p className="text-sm mt-2">
-        &copy; {new Date().getFullYear()} Antonio Conopio. All rights reserved.
+      <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/30">
+        &copy; {new Date().getFullYear()} Antonio Conopio
       </p>
     </footer>
   );
