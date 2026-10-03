@@ -3,19 +3,30 @@
 import { useEffect, useRef } from "react";
 
 const technologies = [
-  "python",
-  "java",
-  "c",
-  "reactjs",
-  "javaScript",
-  "typeScript",
-  "nextjs",
-  "tailwind",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "git",
-  "mysql",
+  { name: "python", icon: "python" },
+  { name: "java", icon: "java" },
+  { name: "typescript/javascript", icon: "typeScript" },
+  { name: "go", icon: "go" },
+  { name: "c", icon: "c" },
+  { name: "sql", icon: "mysql" },
+  { name: "swift", icon: "swift" },
+  { name: "fastapi", icon: "fastapi" },
+  { name: "spring boot", icon: "springboot" },
+  { name: "react", icon: "reactjs" },
+  { name: "node.js", icon: "nodejs" },
+  { name: "swiftui", icon: "swift" },
+  { name: "postgresql", icon: "postgresql" },
+  { name: "redis", icon: "redis" },
+  { name: "supabase", icon: "supabase" },
+  { name: "firebase", icon: "firebase" },
+  { name: "git", icon: "git" },
+  { name: "docker", icon: "docker" },
+  { name: "kubernetes", icon: "kubernetes" },
+  { name: "azure", icon: "azure" },
+  { name: "ci/cd", icon: "githubactions" },
+  { name: "pytest", icon: "pytest" },
+  { name: "pandas", icon: "pandas" },
+  { name: "scikit-learn", icon: "scikitlearn" },
 ];
 
 // these icons render their mark in white on a colored badge — brightness(0)
@@ -52,25 +63,25 @@ export default function TechnologiesMarquee() {
           className="flex gap-10 md:gap-16 w-max animate-scroll hover:[animation-play-state:paused] py-6"
         >
           {[...technologies, ...technologies, ...technologies].map(
-            (tech, index) => (
+            ({ name, icon }, index) => (
               <div
                 key={index}
                 className="flex items-center gap-3 group transition-all duration-300"
               >
                 <img
-                  src={`/svg/${tech}.svg`}
-                  alt={tech}
+                  src={`/svg/${icon}.svg`}
+                  alt={name}
                   className={`h-5 w-auto object-contain transition-all opacity-40 group-hover:opacity-100 ${
-                    letterMarkIcons.has(tech)
+                    letterMarkIcons.has(icon)
                       ? "[filter:grayscale(1)_invert(1)]"
-                      : "[filter:grayscale(1)_brightness(0)_invert(1)]"
+                      : "[filter:grayscale(1)_brightness(0)_invert(1)] [html.light_&]:[filter:grayscale(1)_brightness(0)]"
                   }`}
                   width={20}
                   height={20}
                   loading="lazy"
                 />
                 <span className="font-mono text-sm uppercase tracking-[0.15em] text-white/40 group-hover:text-white transition-colors">
-                  {tech}
+                  {name}
                 </span>
                 <span className="text-white/15 ml-4 md:ml-6">/</span>
               </div>
