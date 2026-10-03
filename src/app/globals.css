@@ -3,6 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-term: #4ade80;
+}
+
+/* Light mode: the site is styled with white/black utilities, so swap the
+   two base colors (and the terminal accent) instead of touching every class. */
+html.light {
+  --color-white: #111111;
+  --color-black: #f4f3ee;
+  --color-term: #15803d;
+}
+
+body,
+header {
+  transition: background-color 0.3s, color 0.3s;
+}
+
 body {
   font-family: var(--font-mono), monospace;
 }
@@ -179,4 +196,86 @@ body::after {
   to {
     transform: translateX(100%);
   }
+}
+
+/* GridHorizon hero background: dot grid + soft spotlight, fading into black */
+.grid-horizon-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-white) 50%, transparent) 1.2px, transparent 1.6px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 0%, transparent 100%);
+}
+
+.grid-horizon-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 45% 40% at 50% 42%,
+    color-mix(in srgb, var(--color-white) 14%, transparent),
+    transparent 70%
+  );
+  animation: grid-horizon-breathe 8s ease-in-out infinite;
+}
+
+.grid-horizon-fade {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--color-black) 4%, transparent) 15%,
+    color-mix(in srgb, var(--color-black) 15%, transparent) 30%,
+    color-mix(in srgb, var(--color-black) 35%, transparent) 48%,
+    color-mix(in srgb, var(--color-black) 60%, transparent) 65%,
+    color-mix(in srgb, var(--color-black) 85%, transparent) 82%,
+    var(--color-black) 100%
+  );
+}
+
+/* faint CRT scanlines */
+.grid-horizon-scan {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-white) 3%, transparent) 0 1px,
+    transparent 1px 4px
+  );
+}
+
+.term-cursor {
+  animation: term-blink 1.1s steps(1) infinite;
+}
+
+@keyframes term-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes grid-horizon-breathe {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-horizon-glow,
+  .term-cursor {
+    animation: none;
+  }
+}
+
+/* light mode: a dark glow/scanlines read as dirt on cream, so tone them down */
+html.light .grid-horizon-scan {
+  opacity: 0.4;
+}
+
+html.light .grid-horizon-glow {
+  opacity: 0.4;
 }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { FiFileText } from "react-icons/fi";
 import { motion } from "motion/react";
+import ThemeToggle from "./themeToggle";
 
 const items = [
   { label: "about", href: "#about" },
@@ -67,6 +68,8 @@ const Navbar = () => {
           ))}
         </nav>
 
+        <div className="flex items-center gap-2 md:gap-3 shrink-0">
+        <ThemeToggle />
         <a
           href="/resume.pdf"
           target="_blank"
@@ -76,6 +79,7 @@ const Navbar = () => {
           <FiFileText className="text-sm" />
           <span className="hidden sm:inline">Resume</span>
         </a>
+        </div>
       </div>
 
       <div className="flex md:hidden justify-center gap-6 pb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
