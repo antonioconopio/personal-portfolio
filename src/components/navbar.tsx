@@ -39,9 +39,13 @@ const Navbar = () => {
         <a
           href="#"
           onClick={scrollToTop}
-          className="font-mono font-thin  text-sm tracking-[0.2em] text-white uppercase shrink-0"
+          aria-label="Back to top"
+          className="flex items-center gap-2 font-mono text-sm tracking-[0.2em] text-white uppercase shrink-0"
         >
-          {"<ac>"}
+          <span aria-hidden className="text-term">
+            &gt;
+          </span>
+          <span>ac</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1 bg-black/40 border border-white/15 px-2 py-1.5 rounded-full">
@@ -69,16 +73,16 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3 shrink-0">
-        <ThemeToggle />
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-white border border-white/30 rounded-full px-3 md:px-4 py-2 shrink-0 transition-colors duration-300 hover:bg-white hover:text-black"
-        >
-          <FiFileText className="text-sm" />
-          <span className="hidden sm:inline">Resume</span>
-        </a>
+          <ThemeToggle />
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-white border border-white/30 rounded-full px-3 md:px-4 py-2 shrink-0 transition-colors duration-300 hover:bg-white hover:text-black"
+          >
+            <FiFileText className="text-sm" />
+            <span className="hidden sm:inline">Resume</span>
+          </a>
         </div>
       </div>
 
