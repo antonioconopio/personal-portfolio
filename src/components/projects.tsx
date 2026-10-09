@@ -6,6 +6,7 @@ import {
   FiTrendingUp,
   FiPlay,
   FiLock,
+  FiSearch,
 } from "react-icons/fi";
 import CardSwap, { Card } from "./CardSwap";
 import { GlowingEffect } from "./ui/glowing-effect";
@@ -58,6 +59,24 @@ const galleryProjects = [
       "Vite",
     ],
     githubLink: null,
+  },
+  {
+    index: "04",
+    title: "Lantern",
+    icon: FiSearch,
+    description:
+      "A RAG service that answers natural-language questions over uploaded documents with page-level citations, declining questions the documents can't answer. A LangGraph agent handles conditional retrieval, query rewriting, and multi-turn session memory, and a 28-case eval suite lifted answer accuracy from 86% to 100% with 92% citation precision.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "ChromaDB",
+      "Pydantic",
+      "pytest",
+      "Docker",
+    ],
+    githubLink: "https://github.com/antonioconopio/lantern",
   },
 ];
 
